@@ -13,18 +13,20 @@ export class AppComponent implements OnInit {
   
   title = 'priorities';
   description = 'keep track of stuff you need or want to buy';
-  needList;
+  needList: object[];
   wantList;
   purchasedList;
   
 
-  constructor(private needListService: NeedListService, private wantListService: WantListService, private purchasedListService: PurchasedListService) {
+  constructor(public needListService: NeedListService, public wantListService: WantListService, public purchasedListService: PurchasedListService) {
     this.needList = this.needListService.getList();
     this.wantList = this.wantListService.getList();
     this.purchasedList = this.purchasedListService.getList();
   }
 
   ngOnInit(): void {}
+
+  onClick() {}
 
   
 }

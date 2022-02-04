@@ -11,7 +11,7 @@ export class NeedListService {
 
   constructor() { 
     this.shoppingList = shoppinglistMaster;
-    this.needList = this.generateNeedList()
+    this.needList = this.generateNeedList();
   }
 
   generateNeedList() {
@@ -25,6 +25,7 @@ export class NeedListService {
   }
 
   getList() {
+    this.needList = this.generateNeedList();
     return this.needList;
   }
 }
