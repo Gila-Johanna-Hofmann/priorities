@@ -22,6 +22,9 @@ export class NeedListService {
       }
     }
     return list;
+  }
 
+  getList() {
+    return this.needList;
   }
 }

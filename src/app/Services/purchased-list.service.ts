@@ -11,10 +11,10 @@ export class PurchasedListService {
 
   constructor() { 
     this.shoppingList = shoppinglistMaster;
-    this.purchasedList = this.generateNeedList()
+    this.purchasedList = this.generatePurchasedList()
   }
 
-  generateNeedList() {
+  generatePurchasedList() {
     let list: object[] = [];
     for (let i in this.shoppingList) {
       if(this.shoppingList[i].purchased === true) {
@@ -22,5 +22,9 @@ export class PurchasedListService {
       }
     }
     return list;
+  }
+
+  getList() {
+    return this.purchasedList;
   }
 }
