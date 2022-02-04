@@ -26,7 +26,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onClick() {}
+  onClick() {
+    console.log("I'm a lonely, empty click-event-handler.");
+  }
 
   
 }
