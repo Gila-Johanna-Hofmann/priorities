@@ -1,5 +1,4 @@
 <style></style>
-
 <div class="content">
   <div class="header-container">
     <h1>{{title}}</h1>
@@ -11,7 +10,7 @@
   <div class="toshop-container">
     <div class="one-list">
       <h4 (click)="onClick()">NEED</h4>
-      <app-need-list [needList]="needList"></app-need-list>
+      <app-need-list [shoppingList]="needList" (purchased)="onPurchasedChange($event)"></app-need-list>
     </div>
     <div class="one-list">
       
