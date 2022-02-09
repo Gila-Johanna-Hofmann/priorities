@@ -1,6 +1,9 @@
 # Priorities
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+This project was generated with npm and [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+
+# Contributions
+@Dennis refactored and made everything nicer and simpler, and helped greatly with implement the user input-portion of the code
 
 ## Development server
 
@@ -13,6 +16,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Download the following npm-packages:
 
 ## Running unit tests
 
