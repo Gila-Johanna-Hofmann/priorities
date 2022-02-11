@@ -1,0 +1,19 @@
+.input-element {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+}
+
+.submit-button {
+    
+}
+
+#whitelabel {
+    color: white;
+}
