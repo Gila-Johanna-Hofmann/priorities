@@ -10,13 +10,15 @@ export class InputFormComponent implements OnInit {
 
   model: any;
 
-  constructor() { }
+  constructor() { 
+    
+  }
 
   ngOnInit(): void {
   }
 
   userInput(input: Object) {
-    //code here
+    
   }
 
 }
