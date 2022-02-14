@@ -1,24 +1,28 @@
 <style></style>
 <div class="content">
   <div class="header-container">
-    <h1>{{title}}</h1>
-    <h3>{{description}}</h3>
+    <h1>{{ title }}</h1>
+    <h3>{{ description }}</h3>
   </div>
-  <div class="input-container">
-    <app-input-form></app-input-form>
+  <Button *ngIf="isButtonHidden" (click)="onShowAddButton(false)"
+    >Add Item</Button
+  >
+  <div class="input-container" *ngIf="!isButtonHidden">
+    <app-input-form
+      [shoppingItem]="emptyItem"
+      [categories]="categories"
+      (submitItem)="onSubmit($event)"
+    ></app-input-form>
   </div>
   <div class="toshop-container">
     <div class="one-list">
       <h4 (click)="onClick()">NEED</h4>
-      <app-need-list [shoppingList]="needList" (purchased)="onPurchasedChange($event)"></app-need-list>
+      <app-need-list
+        [shoppingList]="needList"
+        (purchased)="onPurchasedChange($event)"
+      ></app-need-list>
     </div>
-    <div class="one-list">
-      
-    </div>
+    <div class="one-list"></div>
   </div>
-  <div class="shopped-container">
-    here goes the child element
-  </div>
+  <div class="shopped-container">here goes the child element</div>
 </div>
-
-<router-outlet></router-outlet>

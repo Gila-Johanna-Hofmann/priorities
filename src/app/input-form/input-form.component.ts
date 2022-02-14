@@ -1,24 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ShoppingItem } from '../shoppinglist-master';
 
 @Component({
   selector: 'app-input-form',
   templateUrl: './input-form.component.html',
-  styleUrls: ['./input-form.component.css']
+  styleUrls: ['./input-form.component.css'],
 })
-export class InputFormComponent implements OnInit {
+export class InputFormComponent {
+  @Input()
+  shoppingItem?: ShoppingItem;
 
-  model: any;
+  @Input()
+  categories: string[] = [];
 
-  constructor() { 
-    
+  @Output()
+  submitItem: EventEmitter<ShoppingItem> = new EventEmitter<ShoppingItem>();
+
+  onSubmit() {
+    this.submitItem.emit(this.shoppingItem);
   }
-
-  ngOnInit(): void {
-  }
-
-  userInput(input: Object) {
-    
-  }
-
 }

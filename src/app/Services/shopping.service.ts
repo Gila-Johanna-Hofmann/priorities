@@ -5,9 +5,13 @@ import { shoppinglistMaster, ShoppingItem } from '../shoppinglist-master';
   providedIn: 'root',
 })
 export class ShoppingService {
+  apiList = [...shoppinglistMaster];
+
+  categories = this.apiList.map((shoppingItem) => shoppingItem.category);
+
   generateNeedList(purchased: boolean, category?: string) {
     let list: ShoppingItem[] = [];
-    let shoppingApiItems = shoppinglistMaster;
+    let shoppingApiItems = this.apiList;
     for (let i in shoppingApiItems) {
       if (
         shoppingApiItems[i].category === category &&
@@ -21,7 +25,7 @@ export class ShoppingService {
 
   getPurchasedList() {
     let list: ShoppingItem[] = [];
-    let shoppingApiItems = shoppinglistMaster;
+    let shoppingApiItems = this.apiList;
     for (let i in shoppingApiItems) {
       if (shoppingApiItems[i].purchased) {
         list.push(shoppingApiItems[i]);
@@ -35,5 +39,13 @@ export class ShoppingService {
       return this.getPurchasedList();
     }
     return this.generateNeedList(purchased, category);
+  }
+
+  addItem(item: ShoppingItem) {
+    this.apiList = [...this.apiList, item];
+  }
+
+  editItem(shoppingItem: ShoppingItem) {
+    this.apiList = [...this.apiList.map((item: ShoppingItem) => item.title === shoppingItem.title ? shoppingItem : item)]
   }
 }

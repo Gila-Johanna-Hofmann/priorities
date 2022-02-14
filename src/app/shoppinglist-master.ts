@@ -1,4 +1,4 @@
-export const shoppinglistMaster: ShoppingItem[] = [
+export let shoppinglistMaster: ShoppingItem[] = [
   {
     title: 'TEST_Backpack',
     url: 'https://www.pinqponq.com/de/collections/sale/products/blok-large-vivid-monochrome',

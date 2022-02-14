@@ -8,24 +8,26 @@ import { ShoppingItem } from './shoppinglist-master';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-
   title = 'priorities';
   description = 'keep track of stuff you need or want to buy';
+  categories: string[] = [];
   needList: ShoppingItem[] = [];
   wantList: ShoppingItem[] = [];
   purchasedList: ShoppingItem[] = [];
+  emptyItem = {} as ShoppingItem;
+  isButtonHidden = true;
 
-  constructor(
-    private shoppingService: ShoppingService
-  ) {}
+  constructor(private shoppingService: ShoppingService) {}
 
   ngOnInit(): void {
+    this.initLists();
+  }
+
+  initLists() {
     this.needList = this.shoppingService.getList(false, 'need');
     this.wantList = this.shoppingService.getList(false, 'want');
     this.purchasedList = this.shoppingService.getList(true);
-    console.log('need', this.needList);
-    console.log('wantList', this.needList);
-    console.log('purchasedList', this.needList);
+    this.categories = this.shoppingService.categories;
   }
 
   onClick() {
@@ -34,6 +36,21 @@ export class AppComponent implements OnInit {
 
   onPurchasedChange(shoppingItem: ShoppingItem) {
     console.log(shoppingItem);
-    
+  }
+
+  onSubmit(item: ShoppingItem) {
+    item = { ...item, purchased: false, category: item.category.toLowerCase() };
+    this.shoppingService.addItem(item);
+    this.onReset();
+  }
+
+  onShowAddButton(showButton: boolean) {
+    this.isButtonHidden = showButton;
+  }
+
+  onReset() {
+    this.initLists();
+    this.isButtonHidden = true;
+    this.emptyItem = {} as ShoppingItem;
   }
 }
