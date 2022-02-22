@@ -13,3 +13,12 @@ a {
 input {
     margin-left: 1rem;
 }
+
+a:any-link {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #666aa9; 
+}

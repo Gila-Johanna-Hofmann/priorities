@@ -9,7 +9,9 @@
     </thead>
     <tbody>
         <tr *ngFor="let item of shoppingList">
-            <td>{{item.title}}</td>
+            <td>
+                <a href="{{item.url}}">{{item.title}}</a>
+            </td>
             <td>{{item.price}}</td>
             <td><input type="checkbox" (change)="onPurchased(item)"></td>
         </tr>
