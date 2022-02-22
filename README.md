@@ -3,7 +3,7 @@
 This project was generated with npm and [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
 # Contributions
-@Dennis refactored and made everything nicer and simpler, and helped greatly with implementing the user input-portion of the code
+@Dennis refactored, made everything cleaner and implemented the user input-portion of the code
 
 ## Development server
 
