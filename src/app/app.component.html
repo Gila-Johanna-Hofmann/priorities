@@ -16,13 +16,23 @@
   </div>
   <div class="toshop-container">
     <div class="one-list">
-      <h4 (click)="onClick()">NEED</h4>
       <app-need-list
         [shoppingList]="needList"
         (purchased)="onPurchasedChange($event)"
       ></app-need-list>
     </div>
-    <div class="one-list"></div>
+    <div class="one-list">
+      <app-want-list
+        [shoppingList]="wantList"
+        (purchased)="onPurchasedChange($event)"
+      ></app-want-list>
+    </div>
   </div>
-  <div class="shopped-container">here goes the child element</div>
+  <div class="shopped-container">
+    <div class="one-list">
+      <app-purchased-list
+        [shoppingList]="purchasedList"
+      ></app-purchased-list>
+    </div>
+  </div>
 </div>

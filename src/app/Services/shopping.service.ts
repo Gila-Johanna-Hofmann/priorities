@@ -7,7 +7,7 @@ import { shoppinglistMaster, ShoppingItem } from '../shoppinglist-master';
 export class ShoppingService {
   apiList = [...shoppinglistMaster];
 
-  categories = this.apiList.map((shoppingItem) => shoppingItem.category);
+  categories = this.getUniqueCategories();
 
   generateNeedList(purchased: boolean, category?: string) {
     let list: ShoppingItem[] = [];
@@ -47,5 +47,10 @@ export class ShoppingService {
 
   editItem(shoppingItem: ShoppingItem) {
     this.apiList = [...this.apiList.map((item: ShoppingItem) => item.title === shoppingItem.title ? shoppingItem : item)]
+  }
+
+  getUniqueCategories() {
+    let unfiltered = this.apiList.map((shoppingItem) => shoppingItem.category);
+    return unfiltered.filter((value, index) => unfiltered.indexOf(value) === index);
   }
 }

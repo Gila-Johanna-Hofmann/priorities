@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ApplicationRef } from '@angular/core';
 import { ShoppingService } from './Services/shopping.service';
 import { ShoppingItem } from './shoppinglist-master';
 
@@ -30,12 +30,10 @@ export class AppComponent implements OnInit {
     this.categories = this.shoppingService.categories;
   }
 
-  onClick() {
-    console.log("I'm a lonely, empty click-event-handler.");
-  }
-
   onPurchasedChange(shoppingItem: ShoppingItem) {
-    console.log(shoppingItem);
+    shoppingItem.purchased = true;
+    this.ngOnInit();
+    
   }
 
   onSubmit(item: ShoppingItem) {
