@@ -1,4 +1,10 @@
+h1 {
+    color: #f7dd60;
+}
 
+h3 {
+    color: white;
+}
 
 .content {
     display: flex;
