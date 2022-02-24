@@ -57,4 +57,12 @@ export class ShoppingService {
         let unfiltered = this.apiList.map((shoppingItem) => shoppingItem.category);
         return unfiltered.filter((value, index) => unfiltered.indexOf(value) === index);
     }
+
+    saveListToStorage() {
+        localStorage.setItem('shoppingList', JSON.stringify(this.apiList))
+    }
+
+    restoreList(shoppingItemList: ShoppingItem[]) {
+        this.apiList = [...shoppingItemList];
+    }
 }

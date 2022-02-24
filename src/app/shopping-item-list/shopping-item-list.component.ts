@@ -4,7 +4,7 @@ import { ShoppingItem } from '../shoppinglist-master';
 @Component({
     selector: 'app-shopping-item-list',
     templateUrl: './shopping-item-list.component.html',
-    styleUrls: ['./shopping-item-list.component.css'],
+    styleUrls: ['./shopping-item-list.component.scss']
 })
 export class ShoppingItemListComponent {
     isPurchasedThVisible = true;
@@ -43,4 +43,5 @@ export class ShoppingItemListComponent {
     onDelete(shoppingItem: ShoppingItem) {
         this.deleteShoppingItem.emit(shoppingItem.guid);
     }
+
 }

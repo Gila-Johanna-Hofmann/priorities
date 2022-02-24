@@ -9,10 +9,11 @@
 a:any-link {
     text-decoration: none;
     color: black;
-}
 
-a:hover {
-    color: #666aa9; 
+    &:hover {
+        color: #666aa9; 
+
+    }
 }
 
 input {
