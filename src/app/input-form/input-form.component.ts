@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ShoppingItem } from '../shoppinglist-master';
 
 @Component({

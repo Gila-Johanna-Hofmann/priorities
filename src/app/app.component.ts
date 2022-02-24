@@ -1,54 +1,76 @@
-import { Component, OnInit, ApplicationRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShoppingService } from './Services/shopping.service';
-import { ShoppingItem } from './shoppinglist-master';
+import { ShoppingItem, uuidv4 } from './shoppinglist-master';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'priorities';
-  description = 'keep track of stuff you need or want to buy';
-  categories: string[] = [];
-  needList: ShoppingItem[] = [];
-  wantList: ShoppingItem[] = [];
-  purchasedList: ShoppingItem[] = [];
-  emptyItem = {} as ShoppingItem;
-  isButtonHidden = true;
+    title = 'priorities';
 
-  constructor(private shoppingService: ShoppingService) {}
+    description = 'keep track of stuff you need or want to buy';
 
-  ngOnInit(): void {
-    this.initLists();
-  }
+    categories: string[] = [];
 
-  initLists() {
-    this.needList = this.shoppingService.getList(false, 'need');
-    this.wantList = this.shoppingService.getList(false, 'want');
-    this.purchasedList = this.shoppingService.getList(true);
-    this.categories = this.shoppingService.categories;
-  }
+    needList: ShoppingItem[] = [];
 
-  onPurchasedChange(shoppingItem: ShoppingItem) {
-    shoppingItem.purchased = true;
-    this.ngOnInit();
-    
-  }
+    wantList: ShoppingItem[] = [];
 
-  onSubmit(item: ShoppingItem) {
-    item = { ...item, purchased: false, category: item.category.toLowerCase() };
-    this.shoppingService.addItem(item);
-    this.onReset();
-  }
+    purchasedList: ShoppingItem[] = [];
 
-  onShowAddButton(showButton: boolean) {
-    this.isButtonHidden = showButton;
-  }
+    emptyItem = {} as ShoppingItem;
 
-  onReset() {
-    this.initLists();
-    this.isButtonHidden = true;
-    this.emptyItem = {} as ShoppingItem;
-  }
+    isButtonHidden = true;
+
+    constructor(private shoppingService: ShoppingService) {}
+
+    ngOnInit(): void {
+        this.initLists();
+    }
+
+    initLists() {
+        this.needList = this.shoppingService.getList(false, 'need');
+        this.wantList = this.shoppingService.getList(false, 'want');
+        this.purchasedList = this.shoppingService.getList(true);
+        this.categories = this.shoppingService.categories;
+    }
+
+    onPurchasedChange(shoppingItem: ShoppingItem) {
+        shoppingItem.purchased = true;
+        this.ngOnInit();
+
+    }
+
+    onSubmit(item: ShoppingItem) {
+        if (!item.guid) {
+            item = { ...item, purchased: false, category: item.category.toLowerCase(), guid: uuidv4() };
+            this.shoppingService.addItem(item);
+        } else {
+            item = { ...item, category: item.category.toLowerCase() };
+            this.shoppingService.editItem(item);
+        }
+        this.onReset();
+    }
+
+    onShowAddButton(showButton: boolean) {
+        this.isButtonHidden = showButton;
+    }
+
+    onReset() {
+        this.initLists();
+        this.isButtonHidden = true;
+        this.emptyItem = {} as ShoppingItem;
+    }
+
+    onEdit($event: ShoppingItem) {
+        this.emptyItem = { ...$event };
+        this.isButtonHidden = false;
+    }
+
+    onDelete($event: string) {
+        this.shoppingService.deleteItem($event);
+        this.onReset();
+    }
 }
