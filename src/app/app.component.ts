@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   purchasedList: ShoppingItem[] = [];
 
-  emptyItem = {} as ShoppingItem;
+  shoppingItem = {} as ShoppingItem;
 
   isButtonHidden = true;
 
@@ -65,11 +65,11 @@ export class AppComponent implements OnInit {
   onReset() {
     this.initLists();
     this.isButtonHidden = true;
-    this.emptyItem = {} as ShoppingItem;
+    this.shoppingItem = {} as ShoppingItem;
   }
 
   onEdit($event: ShoppingItem) {
-    this.emptyItem = { ...$event };
+    this.shoppingItem = { ...$event };
     this.isButtonHidden = false;
   }
 

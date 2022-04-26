@@ -12,7 +12,7 @@
     <div class="input-container"
          *ngIf="!isButtonHidden">
         <app-input-form
-            [shoppingItem]="emptyItem"
+            [shoppingItem]="shoppingItem"
             [categories]="categories"
             (submitItem)="onSubmit($event)"
         ></app-input-form>

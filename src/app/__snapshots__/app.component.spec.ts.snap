@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppComponent should match snapshot 1`] = `
+<app-root
+  __ngContext__={[Function LRootView]}
+  categories={[Function Array]}
+  description={[Function String]}
+  isButtonHidden={[Function Boolean]}
+  needList={[Function Array]}
+  purchasedList={[Function Array]}
+  shoppingItem={[Function Object]}
+  shoppingService={[Function ShoppingService]}
+  title={[Function String]}
+  wantList={[Function Array]}
+>
+  <div
+    class="content"
+  >
+    <div
+      class="header-container"
+    >
+      <h1>
+        priorities
+      </h1>
+      <h3>
+        keep track of stuff you need or want to buy
+      </h3>
+    </div>
+    <button>
+      Add Item 
+    </button>
+    <div
+      class="toshop-container"
+    >
+      <div
+        class="one-list"
+      >
+        <app-shopping-item-list />
+      </div>
+      <div
+        class="one-list"
+      >
+        <app-shopping-item-list />
+      </div>
+    </div>
+    <div
+      class="shopped-container"
+    >
+      <div
+        class="one-list"
+      >
+        <app-shopping-item-list />
+      </div>
+    </div>
+  </div><div
+    class="save-button"
+  >
+    <button>
+       Save 
+    </button>
+  </div>
+</app-root>
+`;
