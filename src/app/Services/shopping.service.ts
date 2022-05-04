@@ -10,28 +10,14 @@ export class ShoppingService {
     categories = this.getUniqueCategories();
 
     generateNeedList(purchased: boolean, category?: string) {
-        let list: ShoppingItem[] = [];
-        let shoppingApiItems = this.apiList;
-        for (let i in shoppingApiItems) {
-            if (
-                shoppingApiItems[i].category === category &&
-                shoppingApiItems[i].purchased === purchased
-            ) {
-                list.push(shoppingApiItems[i]);
-            }
-        }
-        return list;
+        return this.apiList.filter((shoppingItem: ShoppingItem) => {
+            return shoppingItem.category === category && shoppingItem.purchased === purchased;
+        });
     }
 
     getPurchasedList() {
-        let list: ShoppingItem[] = [];
-        let shoppingApiItems = this.apiList;
-        for (let i in shoppingApiItems) {
-            if (shoppingApiItems[i].purchased) {
-                list.push(shoppingApiItems[i]);
-            }
-        }
-        return list;
+        const shoppingApiItems = this.apiList;
+        return shoppingApiItems.filter((shoppingItem: ShoppingItem) => shoppingItem.purchased);
     }
 
     getList(purchased: boolean, category?: string) {
@@ -59,7 +45,7 @@ export class ShoppingService {
     }
 
     saveListToStorage() {
-        localStorage.setItem('shoppingList', JSON.stringify(this.apiList))
+        localStorage.setItem('shoppingList', JSON.stringify(this.apiList));
     }
 
     restoreList(shoppingItemList: ShoppingItem[]) {
