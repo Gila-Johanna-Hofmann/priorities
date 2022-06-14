@@ -1,24 +1,43 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    background-image: linear-gradient(to right top, #ffffff, #e3e1ee, #c7c4de, #aba8ce, #8e8dbe, #9b85bd, #ab7bb7, #bc70ac, #ed799a, #ff907e, #ffb465, #f7dd60);
-    font-family: 'Roboto', sans-serif;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(
+    to right top,
+    #ffffff,
+    #e3e1ee,
+    #c7c4de,
+    #aba8ce,
+    #8e8dbe,
+    #9b85bd,
+    #ab7bb7,
+    #bc70ac,
+    #ed799a,
+    #ff907e,
+    #ffb465,
+    #f7dd60
+  );
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
 }
 
 button {
-    background-color: #666aa9;
-    border: none;
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    cursor: pointer;
+  background-color: transparent;
+  border: white 1px solid;
+  border-radius: 50px;
+  color: #ffffff;
+  padding: 0.25rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-
-h4 {
-    color: #f7dd60;
+h3 {
+  color: #f7dd60;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
+
 

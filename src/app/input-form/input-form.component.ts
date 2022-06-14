@@ -4,7 +4,7 @@ import { ShoppingItem } from '../shoppinglist-master';
 @Component({
   selector: 'app-input-form',
   templateUrl: './input-form.component.html',
-  styleUrls: ['./input-form.component.css'],
+  styleUrls: ['./input-form.component.scss'],
 })
 export class InputFormComponent {
   @Input()

@@ -1,56 +1,53 @@
 <style></style>
 <div class="content">
-    <div class="header-container">
-        <h1>{{ title }}</h1>
-        <h3>{{ description }}</h3>
+  <div class="header-container">
+    <h1>{{ title }}</h1>
+    <h3>{{ description }}</h3>
+  </div>
+  <div class="add-button">
+    <Button *ngIf="isButtonHidden" (click)="onShowAddButton(false)">
+        Add Item
+    </Button>
+  </div>
+  <div class="input-container" *ngIf="!isButtonHidden">
+    <app-input-form
+      [shoppingItem]="shoppingItem"
+      [categories]="categories"
+      (submitItem)="onSubmit($event)"
+    ></app-input-form>
+  </div>
+  <div class="toshop-container">
+    <div class="one-list-left">
+      <app-shopping-item-list
+        [listTitle]="'need list'"
+        [shoppingList]="needList"
+        (shoppingItem)="onEdit($event)"
+        (deleteShoppingItem)="onDelete($event)"
+        (purchased)="onPurchasedChange($event)"
+      ></app-shopping-item-list>
     </div>
-    <Button *ngIf="isButtonHidden"
-            (click)="onShowAddButton(false)"
-    >Add Item
-    </Button
-    >
-    <div class="input-container"
-         *ngIf="!isButtonHidden">
-        <app-input-form
-            [shoppingItem]="shoppingItem"
-            [categories]="categories"
-            (submitItem)="onSubmit($event)"
-        ></app-input-form>
+    <div class="one-list-right">
+      <app-shopping-item-list
+        [listTitle]="'want list'"
+        [shoppingList]="wantList"
+        (shoppingItem)="onEdit($event)"
+        (deleteShoppingItem)="onDelete($event)"
+        (purchased)="onPurchasedChange($event)"
+      ></app-shopping-item-list>
     </div>
-    <div class="toshop-container">
-        <div class="one-list">
-            <app-shopping-item-list
-                [listTitle]="'need list'"
-                [shoppingList]="needList"
-                (shoppingItem)="onEdit($event)"
-                (deleteShoppingItem)="onDelete($event)"
-                (purchased)="onPurchasedChange($event)"
-            ></app-shopping-item-list>
-        </div>
-        <div class="one-list">
-            <app-shopping-item-list
-                [listTitle]="'want list'"
-                [shoppingList]="wantList"
-                (shoppingItem)="onEdit($event)"
-                (deleteShoppingItem)="onDelete($event)"
-                (purchased)="onPurchasedChange($event)"
-            ></app-shopping-item-list>
-        </div>
+  </div>
+  <div class="shopped-container">
+    <div class="one-list">
+      <app-shopping-item-list
+        [listTitle]="'purchased items'"
+        (shoppingItem)="onEdit($event)"
+        (deleteShoppingItem)="onDelete($event)"
+        [shoppingList]="purchasedList"
+      ></app-shopping-item-list>
     </div>
-    <div class="shopped-container">
-        <div class="one-list">
-            <app-shopping-item-list
-                [listTitle]="'purchased items'"
-                (shoppingItem)="onEdit($event)"
-                (deleteShoppingItem)="onDelete($event)"
-                [shoppingList]="purchasedList"
-            ></app-shopping-item-list>
-        </div>
-    </div>
+  </div>
 </div>
 
 <div class="save-button">
-    <button (click)="onSaveList()">
-        Save
-    </button>
+  <button (click)="onSaveList()">Save</button>
 </div>

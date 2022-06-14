@@ -1,5 +1,5 @@
-<div *ngIf="shoppingItem">
-  <h4>enter a new product</h4>
+<div class="new-item-area" *ngIf="shoppingItem">
+  <h3>enter a new product</h3>
   <form #inputForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit()">
     <div class="input-element">
       <label for="title">Title</label>
@@ -46,7 +46,7 @@
       </select>
     </div>
     <div class="input-element">
-      <label id="whitelabel" for="category">. </label>
+      <label id="whitelabel" for="category">.</label>
       <button type="submit" class="submit-button" [disabled]="!inputForm.valid">
         Add
       </button>

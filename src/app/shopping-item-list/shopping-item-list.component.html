@@ -1,30 +1,34 @@
-<h4>{{listTitle}}</h4>
-<table>
+<div class="postit">
+  <h3>{{ listTitle }}</h3>
+  <table>
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Price</th>
-            <th *ngIf="isPurchasedThVisible">Purchased</th>
-            <th></th>
-        </tr>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th *ngIf="isPurchasedThVisible">Purchased</th>
+        <th></th>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let shoppingItem of shoppingList">
-            <td>
-                <a href="{{shoppingItem.url}}">{{shoppingItem.title}}</a>
-            </td>
-            <td>{{shoppingItem.price}}</td>
-            <td *ngIf="shoppingItem.purchased === false">
-                <input type="checkbox"
-                       (change)="onPurchased(shoppingItem)">
-            </td>
-            <td>
-                <button (click)="onEdit(shoppingItem)">Edit</button>
-            </td>
-            <td>
-                <button (click)="onDelete(shoppingItem)">Delete</button>
-            </td>
-        </tr>
+      <tr *ngFor="let shoppingItem of shoppingList">
+        <td>
+          <a href="{{ shoppingItem.url }}">{{ shoppingItem.title }}</a>
+        </td>
+        <td>{{ shoppingItem.price }}</td>
+        <td *ngIf="shoppingItem.purchased === false">
+          <input
+            type="checkbox"
+            class="checkbox"
+            (change)="onPurchased(shoppingItem)"
+          />
+        </td>
+        <td>
+          <button (click)="onEdit(shoppingItem)">Edit</button>
+        </td>
+        <td>
+          <button (click)="onDelete(shoppingItem)">Delete</button>
+        </td>
+      </tr>
     </tbody>
-</table>
-
+  </table>
+</div>

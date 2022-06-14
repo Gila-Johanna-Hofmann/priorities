@@ -1,0 +1,46 @@
+.new-item-area {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.input-element {
+    display: flex;
+    flex-direction: column;
+    padding-right: 1rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="url"], input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: transparent;
+    font-size: 1rem;
+    
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 1rem;
+}
+  
+
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+}
+
+.submit-button {
+    width: 100%;
+}
+
+#whitelabel {
+    color: transparent;
+}
