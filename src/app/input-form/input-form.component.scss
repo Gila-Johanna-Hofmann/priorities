@@ -1,48 +1,46 @@
 .new-item-area {
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
 .input-element {
-    display: flex;
-    flex-direction: column;
-    padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
 }
 
 label {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-input[type="text"], input[type="url"], input[type="number"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 1px solid white;
-    border-radius: 4px;
-    background-color: transparent;
-    font-size: 1rem;
-    
+input[type="text"],
+input[type="url"],
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid white;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 1rem;
 }
 
 select {
-    font-size: 1rem;
-    background-color: transparent;
-    border: 1px solid white; 
+  font-size: 1rem;
+  background-color: transparent;
+  border: 1px solid white;
 }
 
 option {
-    background-color: transparent;
+  background-color: transparent;
 }
-  
-
 
 form {
-    display: flex;
-    flex-direction: row;
-    justify-items: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-items: space-between;
+  align-items: center;
 }
 
 .submit-button {
-    width: 100%;
+  width: 100%;
 }
-
