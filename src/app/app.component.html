@@ -3,8 +3,8 @@
     <h1>{{ title }}</h1>
     <h3>{{ description }}</h3>
   </div>
-  <div class="add-button">
-    <Button *ngIf="isButtonHidden" (click)="onShowAddButton(false)">
+  <div class="add-button" *ngIf="isButtonHidden">
+    <Button (click)="onShowAddButton(false)">
         Add Item
     </Button>
   </div>
