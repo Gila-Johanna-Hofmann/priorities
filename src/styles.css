@@ -1,7 +1,14 @@
-html,
+html {
+  height: 100%;
+}
+
 body {
   height: 100%;
   margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
   background-image: linear-gradient(
     to right top,
     #ffffff,
@@ -17,8 +24,6 @@ body {
     #ffb465,
     #f7dd60
   );
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
 }
 
 button {
@@ -40,4 +45,6 @@ h3 {
   margin-bottom: 1rem;
 }
 
-
+.whitelabel {
+  color: transparent;
+}

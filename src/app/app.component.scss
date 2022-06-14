@@ -1,49 +1,55 @@
-
-
 h1 {
-    color: #f7dd60;
+  color: #f7dd60;
 }
 
 h3 {
-    color: white;
+  color: white;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 2rem;
 }
 
 .header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
-.toshop-container, .shopped-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 2rem;
+.toshop-container,
+.shopped-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .one-list-right {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .one-list-left {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
-.save-button, .add-button {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 4rem;
-    margin-top: 2rem;
+.save-button,
+.add-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
 
-    button {
-        min-width: 15rem;
-    }
+  button {
+    min-width: 15rem;
+  }
+}
+
+.placeholder {
+    height: 4rem;
 }
