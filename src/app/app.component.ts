@@ -80,6 +80,7 @@ export class AppComponent implements OnInit {
 
   onSaveList() {
       this.shoppingService.saveListToStorage();
+      window.alert("Entries Successfully Saved to this Browser Storage!");
   }
 
   onRestoreFromLocalStorage() {
