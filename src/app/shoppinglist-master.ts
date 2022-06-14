@@ -1,7 +1,7 @@
 export let shoppinglistMaster: ShoppingItem[] = [
     {
         guid: '374e36fd-5212-47a9-99e3-e479bad569a2',
-        title: 'TEST_Backpack',
+        title: 'Backpack',
         url: 'https://www.pinqponq.com/de/collections/sale/products/blok-large-vivid-monochrome',
         price: 45.55,
         category: 'need',
@@ -9,7 +9,7 @@ export let shoppinglistMaster: ShoppingItem[] = [
     },
     {
         guid: '75bd2588-683d-4bca-b4f2-76a25512ce85',
-        title: 'TEST_Shoe',
+        title: 'Shoe',
         url: 'https://www.alohas.io/products/habibi-black-leather?variant=32485317247054',
         price: 1045.55,
         category: 'want',
@@ -17,7 +17,7 @@ export let shoppinglistMaster: ShoppingItem[] = [
     },
     {
         guid: '5f8670f4-41ae-4353-980c-83ad87927465',
-        title: 'TEST_Boot',
+        title: 'Boot',
         url: 'https://www.drmartens.com/de/de/p/21045001',
         price: 90.55,
         category: 'need',
@@ -25,7 +25,7 @@ export let shoppinglistMaster: ShoppingItem[] = [
     },
     {
         guid: '92629170-d778-46cc-8f38-c6f64cf4713c',
-        title: 'TEST_Bag',
+        title: 'Bag',
         url: 'https://www.esthe.co.uk/product/beige-crossbody-bag/',
         price: 19,
         category: 'want',
@@ -33,7 +33,7 @@ export let shoppinglistMaster: ShoppingItem[] = [
     },
     {
         guid: 'b3a6ef65-5fd0-49ef-bb89-de255a9352f0',
-        title: 'TEST_Hoodie',
+        title: 'Hoodie',
         url: 'https://www.esthe.co.uk/product/beige-crossbody-bag/',
         price: 19,
         category: 'need',
